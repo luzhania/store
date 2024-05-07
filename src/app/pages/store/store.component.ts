@@ -12,10 +12,15 @@ import { ProductService } from '../../services/product.service';
 })
 export class StoreComponent {
   productList: Product[] = [];
+  // productList: any;
 
   productService: ProductService = inject(ProductService);
 
   constructor() {
-    this.productList = this.productService.getAllProducts();
+    this.productService.getAllProducts().subscribe(
+      data => this.productList = data,
+      error => console.log('ERROR'), //si hay un error mientras se envía el flujo de datos
+      ()=> console.log('END')
+    );
   }
- }
+}

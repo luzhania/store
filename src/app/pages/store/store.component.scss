@@ -1,12 +1,21 @@
-.contenedor-productos{
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    flex-wrap: wrap;
-    div{
-      flex-basis: 25%;
-      flex-grow: 1;
-      flex-shrink: 1;
-    }
-   }
-   
+.contenedor-producto {
+  width: calc(33.33% - 20px); /* Aproximadamente un tercio del ancho de la pantalla, con espacio entre los productos */
+  margin: 10px; /* Espacio entre los productos */
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total del contenedor */
+}
+
+@media (max-width: 768px) {
+  .contenedor-producto {
+    width: calc(50% - 20px); /* Dos productos por fila en pantallas más pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .contenedor-producto {
+    width: 100%; /* Un producto por fila en pantallas muy pequeñas */
+  }
+}
