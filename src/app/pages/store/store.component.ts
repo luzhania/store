@@ -12,7 +12,6 @@ import { ProductService } from '../../services/product.service';
 })
 export class StoreComponent {
   productList: Product[] = [];
-  // productList: any;
 
   productService: ProductService = inject(ProductService);
 
